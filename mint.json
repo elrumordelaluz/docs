@@ -1,60 +1,54 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Reactour",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#9563FF",
-    "light": "#AE87FF",
+    "primary": "#2c697c",
+    "light": "#43c6ac",
     "dark": "#0D001D",
     "background": {
       "dark": "#090014"
     },
     "anchors": {
-      "from": "#FF7F57",
-      "to": "#9563FF"
+      "from": "#2c697c",
+      "to": "#43c6ac"
     }
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "name": "Github",
+      "url": "https://github.com/elrumordelaluz/reactour"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Demo",
+    "url": "https://www.react.tours/"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
+
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "name": "Demo",
+      "icon": "magnifying-glass",
+      "url": "https://www.react.tours/"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Website",
+      "icon": "browser",
+      "url": "https://elrumordelaluz.com"
     }
   ],
+  "topAnchor": {
+    "name": "Documentation",
+    "icon": "book-open-cover"
+  },
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": ["introduction", "quickstart", "examples"]
     },
     {
       "group": "Essentials",
@@ -65,23 +59,16 @@
         "essentials/settings",
         "essentials/navigation"
       ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
-      ]
     }
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/elrumordelaluz",
-    "github": "https://github.com/elrumordelaluz"
+    "github": "https://github.com/elrumordelaluz",
+    "instagram": "https://www.instagram.com/elrumordelaluz"
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true,
+    "raiseIssue": true
   }
 }
