@@ -559,3 +559,96 @@ This option could be overrided on specific steps using `stepInteraction` prop.
     />
   </Expandable>
 </ResponseField>
+
+<ResponseField
+  name="ContentComponent?"
+  type="ComponentType<PopoverContentProps>"
+>
+  Completelly custom component to render inside the [Popover](/popover).
+  <Expandable title="PopoverContentProps">
+    <ResponseField
+      name="styles?"
+      type="StylesObj & PopoverStylesObj & MaskStylesObj"
+    />
+    <ResponseField
+      name="badgeContent?"
+      type="(badgeProps: BadgeProps) => any"
+    />
+    <ResponseField name="components?" type="PopoverComponentsType" />
+    <ResponseField name="accessibilityOptions?" type="A11yOptions" />
+    <ResponseField name="disabledActions?" type="boolean" />
+    <ResponseField name="onClickClose?" type="boolean" />
+    <ResponseField
+      name="setCurrentStep?"
+      type="Dispatch<React.SetStateAction<number>>"
+    />
+    <ResponseField name="currentStep" type="number" required />
+    <ResponseField name="transition?" type="boolean" />
+    <ResponseField name="isHighlightingObserved?" type="boolean" />
+    <ResponseField
+      name="setIsOpen"
+      type="Dispatch<React.SetStateAction<Boolean>>"
+      required
+    />
+    <ResponseField name="steps" type="StepType[]" required />
+    <ResponseField name="showNavigation?" type="boolean" />
+    <ResponseField name="showPrevNextButtons?" type="boolean" />
+    <ResponseField name="showCloseButton?" type="boolean" />
+    <ResponseField name="showBadge?" type="boolean" />
+    <ResponseField name="nextButton?" type="(props: BtnFnProps) => void" />
+    <ResponseField name="prevButton?" type="(props: BtnFnProps) => void" />
+    <ResponseField name="disableDotsNavigation?" type="boolean" />
+    <ResponseField name="rtl?" type="boolean" />
+  </Expandable>
+
+      <Expandable title="Example">
+
+```js
+function ContentComponent(props) {
+  const isLastStep = props.currentStep === props.steps.length - 1;
+  const content = props.steps[props.currentStep].content;
+  return (
+    <div style={{ border: "5px solid red", padding: 10, background: "white" }}>
+      {/* Check if the step.content is a function or a string */}
+      {typeof content === "function"
+        ? content({ ...props, someOtherStuff: "Custom Text" })
+        : content}
+      <button
+        onClick={() => {
+          if (isLastStep) {
+            props.setIsOpen(false);
+          } else {
+            props.setCurrentStep((s) => s + 1);
+          }
+        }}
+      >
+        {isLastStep ? "x" : ">"}
+      </button>
+    </div>
+  );
+}
+
+const steps = [
+  /* ... */
+];
+
+function App() {
+  return (
+    <TourProvider
+      steps={steps}
+      ContentComponent={ContentComponent}
+      styles={{ popover: (base) => ({ ...base, padding: 0 }) }}
+    >
+      {/* ... */}
+    </TourProvider>
+  );
+}
+```
+
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="Wrapper?" type="ComponentType" default="React.Fragment">
+  Element which wraps the Tour. Useful in case is needed to port the Tour into a
+  [Portal](https://react.dev/reference/react-dom/createPortal).
+</ResponseField>

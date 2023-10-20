@@ -60,7 +60,7 @@
     },
     {
       "group": "Tour",
-      "pages": ["tour/quickstart", "tour/props"]
+      "pages": ["tour/quickstart", "tour/props", "tour/hooks"]
     }
   ],
   "footerSocials": {
