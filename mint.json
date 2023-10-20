@@ -51,14 +51,16 @@
       "pages": ["introduction", "quickstart", "examples"]
     },
     {
-      "group": "Essentials",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation"
-      ]
+      "group": "Mask",
+      "pages": ["mask/quickstart", "mask/props"]
+    },
+    {
+      "group": "Popover",
+      "pages": ["popover/quickstart", "popover/props"]
+    },
+    {
+      "group": "Tour",
+      "pages": ["tour/quickstart", "tour/props"]
     }
   ],
   "footerSocials": {
